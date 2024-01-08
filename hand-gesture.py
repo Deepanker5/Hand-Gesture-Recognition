@@ -4,12 +4,12 @@ from mediapipe.tasks.python import vision
 import cv2
 
 mp_drawing = mp.solutions.drawing_utils
-mp_pose = mp.solutions.pose
+mp_holistic = mp.solutions.holistic
 
 #get webcam to work
 cap = cv2.VideoCapture(0)
 
-with mp_pose.Pose(min_detection_confidence = 0.9, min_tracking_confidence = 0.9) as pose:
+with mp_holistic.Holistic(min_detection_confidence = 0.5, min_tracking_confidence = 0.5) as pose:
 
     while cap.isOpened():
         ret , frame = cap.read()
@@ -23,8 +23,11 @@ with mp_pose.Pose(min_detection_confidence = 0.9, min_tracking_confidence = 0.9)
         image.flags.writeable = True
         image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
-        #render detection 
-        mp_drawing.draw_landmarks(image, results.pose_landmarks, mp_pose.POSE_CONNECTIONS)
+        #render detection for right and left hand 
+        mp_drawing.draw_landmarks(image, results.right_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
+        mp_drawing.draw_landmarks(image, results.left_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
+
+
 
 
         cv2.imshow("mediapipe feed", image)
