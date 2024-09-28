@@ -12,6 +12,6 @@ This is my final project for the Digital Systems and Design degree. More informa
 - update 7: Successfully integrated pygame to the file in order to show live sentence creation 
 
 
-## Todo:
-- Increase the number of letters the model can translate
-- Improve accuracy of the letter prediction
+## Sample of the GUI:
+<img width="805" alt="image" src="https://github.com/user-attachments/assets/e7e52459-cd50-4043-8958-6bd9a7269113">
+
