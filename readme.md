@@ -1,6 +1,6 @@
 # Introduction 
 ## Project Brief
-This is my final project for the Digital Systems and Design degree. More information about this project will posted shortly.
+This is my final project for the Digital Systems and Design degree. The project translates sign language into written text real-time using the webcam on your laptop. The project was made using the Mediapipe and OpenCV libraries. 
 
 ## Progress
 - update 1: Installed all dependancies and started to get familiar with mediapipe and openCV
